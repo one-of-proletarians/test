@@ -15,7 +15,7 @@ export async function GET() {
   const desc = text.length > LEN ? text.slice(0, LEN - 3) + "..." : text;
   const $ = cheerio.load(html);
 
-  $(`meta[property="og:title"]`).attr("content", desc);
+  $(`meta[property="og:description"]`).attr("content", desc);
 
   return new Response($.html(), {
     headers: { "Content-Type": "text/html" },
