@@ -13,5 +13,7 @@ const html = `<!doctype html>
 </html>`;
 
 export async function GET() {
-  return new Response(html);
+  return new Response(html, {
+    headers: { "Content-Type": "text/html" },
+  });
 }
